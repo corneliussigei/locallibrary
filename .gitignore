@@ -1,4 +1,3 @@
-# virtualenv
 venv/
 ENV/
 .idea/locallibrary.iml
