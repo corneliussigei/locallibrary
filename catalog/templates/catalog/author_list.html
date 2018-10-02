@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Author List</h1>
+    {% if author_list %}
+        <ul>
+            {% for author in author_list %}
+                <table>
+                    <thead>
+                    <tr >
+                        <th style="border: 1px solid black">ID</th>
+                        <th style="border: 1px solid black">Author Name</th>
+                        <th style="border: 1px solid black">Date of Birth:</th>
+                        <th style="border: 1px solid black">Date of Death:</th>
+                    </tr >
+                    </thead>
+                    <tbody>
+                    <tr >
+                        <td style="border: 1px solid black">{{ author.id }}</td>
+                        <td style="border: 1px solid black"><a href="{{ author.get_absolute_url }}">{{ author }}</a></td>
+                        <td style="border: 1px solid black">{{ author.date_of_birth }}</td>
+                        <td style="border: 1px solid black">{{ author.date_of_death }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no authors yet.</p>
+    {% endif %}
+{% endblock %}
